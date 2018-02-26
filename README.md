@@ -6,13 +6,13 @@ You will need the directory to the stories from DailyMail where the content and 
 
 This tool will help extract the title, content and summary and output it to another directory with the same filename as in the stories or downloads directories.
 
-Install:
+# Install:
 sudo pip install dailymail_tcs
 
-Usage:
-
+# Usage:
 from dailymail_tcs import tcs
+
 tcs.extract([dailymail_download_directory],[dailymail_stories_directory],[output_directory])
 
-eg:
+# Example:
 tcs.extract("/data/corpus/dailymail/dailymail/downloads/","/data/corpus/dailymail/dailymail/stories/","./dm_test/")
