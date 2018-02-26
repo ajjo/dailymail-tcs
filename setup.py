@@ -1,13 +1,16 @@
 from distutils.core import setup
 setup(
-  name = 'dailymail-tcs',
-  scripts = ['dailymail-tcs'],
-  version = '0.2',
+  name = 'dailymail_tcs',
+  packages = ['dailymail_tcs'],
+  version = '0.9',
   description = 'Extract title, summary and content from dailymail corpus.',
   author = 'Ajjo',
+  license='MIT',
   author_email = 'ajjogames@gmail.com',
   url = 'https://github.com/ajjo/dailymail-tcs.git',
-  download_url = 'https://github.com/ajjo/dailymail-tcs/archive/0.2.tar.gz',
   keywords = ['dailymail', 'title', 'summary','content'], 
+  install_requires=[
+    'beautifulsoup4',
+  ],
   classifiers = [],
 )

@@ -10,7 +10,7 @@ filesProcessed = []
 val = Value('i', 0)
 lock = Lock()
 
-def getContentAndSummary(content):
+def get_content_and_summary(content):
                
     index = content.index("@highlight")
     highlights = content[index:index+len(content)]
@@ -46,7 +46,7 @@ def process_file(idx):
     storyFilePath = storyPath + file.replace(".html",".story")
     data = open(storyFilePath,"r",encoding="utf8")
     content = data.read()
-    content,summary = getContentAndSummary(content)
+    content,summary = get_content_and_summary(content)
 
     out = {}
     out["title"] = title
@@ -62,7 +62,7 @@ def process_file(idx):
         if(val.value % 500 == 0):
             print("Finished processing",val.value,"files of",len(files),"files")
 
-def extract_tcs(dm_html_downloads_dir,dm_stories_dir,output_dir):
+def extract(dm_html_downloads_dir,dm_stories_dir,output_dir):
 
     global htmlPath
     global storyPath
@@ -77,8 +77,9 @@ def extract_tcs(dm_html_downloads_dir,dm_stories_dir,output_dir):
     print("Total files being processed",len(files))
 
     with Pool(5) as p:
-        p.map(process_file, range(100))
+        p.map(process_file, range(len(files)))
 
     print("All done.")
 
-# extract_tcs("/data/corpus/dailymail/dailymail/downloads/","/data/corpus/dailymail/dailymail/stories/","./dm_test/")
+# example
+# extract("/data/corpus/dailymail/dailymail/downloads/","/data/corpus/dailymail/dailymail/stories/","./dm_test/")
