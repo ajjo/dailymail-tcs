@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'dailymail_tcs',
   packages = ['dailymail_tcs'],
-  version = '0.9',
+  version = '0.10',
   description = 'Extract title, summary and content from dailymail corpus.',
   author = 'Ajjo',
   license='MIT',
