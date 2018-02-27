@@ -15,4 +15,4 @@ from dailymail_tcs import tcs
 tcs.extract([dailymail_download_directory],[dailymail_stories_directory],[output_directory])
 
 # Example:
-tcs.extract("/data/corpus/dailymail/dailymail/downloads/","/data/corpus/dailymail/dailymail/stories/","./dm_test/")
+tcs.extract("/dailymail/downloads/","/dailymail/stories/","./dailymail_out/")
